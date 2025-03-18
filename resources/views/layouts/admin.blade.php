@@ -13,32 +13,9 @@
 <body>
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed">
-        <!-- Sidebar Start -->
-        <aside class="left-sidebar text-dark" id="sidebar">
-            <div>
-                <div class="brand-logo d-flex align-items-center justify-content-between p-3">
-                    <a href="{{ route('admin.dashboard') }}" class="text-nowrap logo-img mb-3 mt-0">
-                        <img src="/assets/images/logos/dark-logo.svg" width="220" alt="Logo" />
-                    </a>
-                </div>
-                <nav class="sidebar-nav scroll-sidebar" data-simplebar>
-                    <ul id="sidebarnav" class="nav flex-column">
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.dashboard') }}"><i class="ti ti-layout-dashboard"></i> Dashboard</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.petani') }}"><i class="ti ti-user"></i> Petani</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.hutang') }}"><i class="ti ti-cash"></i> Hutang Petani</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.penjualan_padi') }}"><i class="ti ti-shopping-cart"></i> Penjualan Padi</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.produk') }}"><i class="ti ti-package"></i> Produk</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.penyewaan') }}"><i class="ti ti-tool"></i> Penyewaan</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.pengiriman') }}"><i class="ti ti-truck"></i> Pengiriman</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.produksi_beras') }}"><i class="ti ti-building"></i> Produksi Beras</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.laporan') }}"><i class="ti ti-report"></i> Laporan</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.pengaturan') }}"><i class="ti ti-settings"></i> Pengaturan</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </aside>
-        <!-- Sidebar End -->
 
+        <!-- Sidebar Include -->
+        @include('layouts.sidebar')
         <!-- Main wrapper -->
         <div class="body-wrapper" id="content">
             <!-- Header Start -->
