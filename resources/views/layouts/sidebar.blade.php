@@ -9,6 +9,7 @@
             <ul id="sidebarnav" class="nav flex-column">
                 <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.dashboard') }}"><i class="ti ti-layout-dashboard"></i> Dashboard</a></li>
                 <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.petani') }}"><i class="ti ti-user"></i> Petani</a></li>
+                <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.hutang') }}"><i class="ti ti-cash"></i> Hutang Petani</a></li>
                 <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.penjualan_padi') }}"><i class="ti ti-shopping-cart"></i> Penjualan Padi</a></li>
                 <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.produk') }}"><i class="ti ti-package"></i> Produk</a></li>
                 <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.penyewaan') }}"><i class="ti ti-tool"></i> Penyewaan</a></li>
@@ -16,7 +17,6 @@
                 <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.produksi_beras') }}"><i class="ti ti-building"></i> Produksi Beras</a></li>
                 <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.laporan') }}"><i class="ti ti-report"></i> Laporan</a></li>
                 <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.pengaturan') }}"><i class="ti ti-settings"></i> Pengaturan</a></li>
-                <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.hutang_petani') }}"><i class="ti ti-cash"></i> Hutang Petani</a></li>
             </ul>
         </nav>
     </div>
