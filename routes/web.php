@@ -31,6 +31,11 @@ Route::prefix('/')->group(function () {
         return view('admin.produksi_beras');
     })->name('admin.produksi_beras');
 
+    Route::get('/hutang', function () {
+        return view('admin.hutang');
+    })->name('admin.hutang');
+
+
     Route::get('/laporan', function () {
         return view('admin.laporan');
     })->name('admin.laporan');

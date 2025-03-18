@@ -21,6 +21,11 @@ body {
 }
 
 .app-header {
+    height: 60px; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #ffffff;
 }
 
@@ -55,10 +60,47 @@ body {
 .body-wrapper {
     margin-left: 250px;
     transition: all 0.3s;
+    margin-top: 60px;
 }
 .body-wrapper.full-width {
     margin-left: 0;
 }
+
+@media (max-width: 768px) {
+    #sidebar {
+        position: fixed;
+        left: -250px;
+        width: 250px;
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+        height: 100vh;
+        background-color: #fff;
+    }
+
+    #sidebar.collapsed {
+        left: 0;
+    }
+
+    .body-wrapper {
+        margin-left: 0 !important;
+    }
+
+    .app-header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    }
+
+    .container-fluid {
+        margin-top: 70px;
+    }
+}
+
+
+
+
 
 /*!
  * Bootstrap  v5.3.0-alpha1 (https://getbootstrap.com/)
