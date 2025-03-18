@@ -1,8 +1,8 @@
 <aside class="left-sidebar text-dark" id="sidebar">
     <div>
-        <div class="brand-logo d-flex align-items-center justify-content-between p-3">
+        <div class="brand-logo d-flex align-items-center justify-content-between p-3 mb-3">
             <a href="{{ route('admin.dashboard') }}" class="text-nowrap logo-img">
-                <img src="/assets/images/logos/dark-logo.svg" width="180" alt="Logo" />
+                <img src="/assets/images/logos/dark-logo.svg" width="220" alt="Logo" />
             </a>
         </div>
         <nav class="sidebar-nav scroll-sidebar" data-simplebar>

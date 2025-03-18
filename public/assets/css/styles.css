@@ -98,7 +98,7 @@ body {
     }
 }
 
-   /* Default tampilan sidebar */
+/* Default tampilan sidebar */
 #sidebar {
     width: 250px;
     transition: all 0.3s ease;
@@ -113,18 +113,22 @@ body {
 /* Main content default */
 #content {
     transition: all 0.3s ease;
-    margin-left: 250px;
+    /* margin-left: 250px; */
+    width: calc(100% - 250px);
 }
 
-/* Jika sidebar ditutup, content melebar penuh */
+/* Header juga harus melebar */
+.app-header {
+    transition: all 0.3s ease;
+    /* margin-left: 250px; */
+    width: calc(100% - 250px);
+}
+
+/* Jika sidebar ditutup, content dan header melebar penuh */
 .full-width {
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0 !important;
+    width: 100% !important;
 }
-
-
-
-
 
 
 /*!

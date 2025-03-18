@@ -37,30 +37,5 @@
     <script src="{{ asset('js/script.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let sidebar = document.getElementById("sidebar");
-            let content = document.getElementById("content");
-            document.querySelectorAll(".sidebar-link").forEach(link => {
-                if (window.location.href.includes(link.getAttribute("href"))) {
-                    link.classList.add("active");
-                }
-            });
-
-            document.getElementById("sidebarCollapse").addEventListener("click", function() {
-                sidebar.classList.toggle("collapsed");
-                content.classList.toggle("full-width");
-                if (window.innerWidth <= 768) {
-                    sidebar.style.left = sidebar.classList.contains("collapsed") ? "0" : "-250px";
-                }
-            });
-
-            window.addEventListener("resize", function() {
-                if (window.innerWidth > 768) {
-                    sidebar.style.left = "0";
-                }
-            });
-        });
-    </script>
 </body>
 </html>
