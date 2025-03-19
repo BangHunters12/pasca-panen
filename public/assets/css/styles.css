@@ -1,6 +1,6 @@
 @charset "UTF-8";@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
 
-
+/* Tampilan Home */
 body {
     background-color: #ffffff;
     color: #333;
@@ -98,7 +98,7 @@ body {
     }
 }
 
-/* Default tampilan sidebar */
+/*tampilan sidebar */
 #sidebar {
     width: 250px;
     transition: all 0.3s ease;
@@ -128,6 +128,35 @@ body {
 .full-width {
     margin-left: 0 !important;
     width: 100% !important;
+}
+
+/* notifikasi */
+.dropdown-menu-notif {
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.notif-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.2s;
+}
+.notif-item:hover {
+    background: #f8f9fa;
+}
+.notif-item i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+.notif-item p {
+    margin: 0;
+    font-size: 14px;
+}
+.notif-time {
+    font-size: 12px;
+    color: gray;
 }
 
 

@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             content.style.marginLeft = "250px";
             content.style.width = "calc(100% - 250px)";
-            header.style.marginLeft = "10px";
+            header.style.marginLeft = "20px";
             header.style.width = "calc(100% - 250px)";
         }
     });

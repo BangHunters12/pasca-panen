@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Prefix untuk admin agar lebih rapi
-Route::prefix('/')->group(function () {
+Route::prefix('/admin')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
@@ -39,7 +39,10 @@ Route::prefix('/')->group(function () {
     Route::get('/laporan', function () {
         return view('admin.laporan');
     })->name('admin.laporan');
-
+    
+    Route::get('/ror', function () {
+        return view('admin.ror');
+    })->name('admin.ror');
     Route::get('/pengaturan', function () {
         return view('admin.pengaturan');
     })->name('admin.pengaturan');

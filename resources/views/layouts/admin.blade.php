@@ -1,4 +1,3 @@
-<!-- resources/views/layouts/admin.blade.php -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -10,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    
 </head>
 <body>
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -18,24 +16,39 @@
 
         <!-- Sidebar Include -->
         @include('layouts.sidebar')
+
         <!-- Main wrapper -->
         <div class="body-wrapper" id="content">
             <!-- Header Start -->
             <header class="app-header p-3 bg-light shadow-sm d-flex justify-content-between align-items-center">
                 <button class="btn btn-outline-secondary" id="sidebarCollapse">☰</button>
-                <div>
-                    <a href="/logout" class="btn btn-danger">Logout</a>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Include Notifikasi -->
+                    @include('layouts.notifikasi')
+
+                    <!-- Profil Admin -->
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="/assets/images/logos/favicon.png" alt="Admin" class="rounded-circle" width="40" height="40">
+                            <span class="ms-2">Admin</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="/profile">Profil</a></li>
+                            <li><a class="dropdown-item text-danger" href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
                 </div>
             </header>
             <!-- Header End -->
-            <div class="container-fluid p-4 mt-5">
+
+            <div class="container-fluid p-4 mt-0">
                 @yield('content')
             </div>
         </div>
     </div>
 
     <script src="{{ asset('js/script.js') }}"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

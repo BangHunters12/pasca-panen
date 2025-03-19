@@ -1,9 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid mt-0 p-0">
         <div class="row">
-            <!-- Sidebar -->
             <!-- Main Content -->
             <main id="main-content" class="col-md-10 col-lg-10">
                 <h2 class="mt-0 p-0">Dashboard</h2>
@@ -45,7 +44,7 @@
                 </div>
 
                 <!-- Graphs & Tables -->
-                <div class="row mt-4 g-3">
+                <div class="row mt-1 g-10 ">
                     <div class="col-12 col-lg-6">
                         <div class="card p-3 bg-light text-black">
                             <h5 class="text-center">Penjualan Padi (Bulanan)</h5>
@@ -60,7 +59,7 @@
                     </div>
                 </div>
 
-                <div class="row mt-4 g-3">
+                <div class="row mt-1 g-10">
                     <div class="col-12 col-lg-6">
                         <div class="card p-3 bg-light text-black">
                             <h5 class="text-center">Penjualan Terbaru</h5>
