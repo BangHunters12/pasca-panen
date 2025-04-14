@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     console.log("JavaScript Loaded!"); // Debugging
 
@@ -44,12 +43,42 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Highlight Active Sidebar Link
+    // Highlight Active Sidebar Link dan Perbaikan Background Aktif
+    let currentPath = window.location.pathname;
+    let foundActive = false;
+
     document.querySelectorAll(".sidebar-link").forEach(link => {
-        if (window.location.href.includes(link.getAttribute("href"))) {
+        let linkPath = new URL(link.href, window.location.origin).pathname;  
+
+        if (currentPath === linkPath) {
             link.classList.add("active");
+            foundActive = true;
+
+            // Jika submenu aktif, buka parent dropdown
+            let parentCollapse = link.closest(".collapse");
+            if (parentCollapse) {
+                parentCollapse.classList.add("show"); 
+                let parentMenu = parentCollapse.previousElementSibling;
+                if (parentMenu) {
+                    parentMenu.classList.add("active");
+                }
+            }
         }
     });
-    // Debugging
+
+    // Perbaikan jika tidak ada submenu aktif, hilangkan background di parent menu
+    let petaniMenu = document.getElementById("petaniMenu");
+    if (petaniMenu) {
+        let parentMenu = petaniMenu.previousElementSibling; // Link utama Petani
+        let activeSubmenu = petaniMenu.querySelector(".sidebar-link.active");
+
+        if (!activeSubmenu) {
+            petaniMenu.classList.remove("show"); // Pastikan tidak terbuka
+            if (parentMenu) {
+                parentMenu.classList.remove("active"); // Hilangkan background biru
+            }
+        }
+    }
+
     console.log("Sidebar script loaded!"); 
 });
