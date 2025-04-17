@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetaniController;
 
+// user
+Route::get('/', function () {
+    return view(view: 'home'); // Mengarah ke resources/views/user/user.blade.php
+})->name('home');
+
 Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
