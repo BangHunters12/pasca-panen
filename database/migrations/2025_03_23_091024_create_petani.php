@@ -8,17 +8,17 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('petani', function (Blueprint $table) {
-            $table->id('id_petani'); // Primary key
-            $table->string('nama_petani', 100);
-            $table->text('alamat_petani');
-            $table->string('username', 50)->unique();
-            $table->string('email', 100)->unique();
+            $table->id();
+            $table->string('nama_lengkap');
+            $table->string('username')->unique();
+            $table->enum('gender', ['Laki-laki', 'Perempuan']);
+            $table->string('email')->unique();
+            $table->string('no_telp');
+            $table->text('alamat');
             $table->string('password');
-            $table->string('no_hp', 20);
-            $table->enum('level', ['prepetani', 'petani', 'admin'])->default('prepetani'); // Status petani
-            $table->timestamps(); // created_at & updated_at
+            $table->timestamps();
         });
-    }
+    }        
 
     public function down()
     {
