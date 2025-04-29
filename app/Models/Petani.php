@@ -1,28 +1,26 @@
 <?php
 
 namespace App\Models;
+use Laravel\Sanctum\HasApiTokens;
+
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class Petani extends Model
+class Petani extends Authenticatable
 {
-    use HasFactory;
-
+    use HasApiTokens,HasFactory, Notifiable;
     protected $table = 'petani'; 
 
-    protected $primaryKey = 'id_petani';
-
-    public $incrementing = true; // Pastikan ini true kalau ID-nya auto-increment
-    protected $keyType = 'int'; // Pastikan Laravel tahu bahwa ID adalah integer
     protected $fillable = [
-        'nama_petani',
-        'alamat_petani',
+        'nama_lengkap',
         'username',
+        'gender',
         'email',
+        'no_telp',
+        'alamat',
         'password',
-        'no_hp',
-        'level',
     ];
 
     protected $hidden = [
