@@ -4,7 +4,7 @@
 <main class="main">
 
   <!-- Hero Section -->
-  <section id="hero" class="hero section dark-background">
+  <secton id="hero" class="hero section dark-background">
 
     <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
 
@@ -52,7 +52,7 @@
 
     </div>
 
-  </section><!-- /Hero Section -->
+  </sectiion><!-- /Hero Section -->
 
   <!-- About Section -->
   <section id="about" class="about section">

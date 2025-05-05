@@ -3,12 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetaniController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\PetaniRegisterController;
+use App\Http\Controllers\PadiController;
 
 // user
 Route::get('/', function () {
-    return view(view: 'home'); // Mengarah ke resources/views/user/user.blade.php
-})->name('home');
+    return view(view: 'user.beranda');
+})->name(name: 'beranda');
 
     Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard', function () {
@@ -43,10 +44,6 @@ Route::get('/', function () {
         return view('admin.laporan');
     })->name('laporan');
 
-    Route::get('/jenis_padi', function () {
-        return view('admin.jenis_padi');
-    })->name('jenis_padi');
-
     Route::get('/pengaturan', function () {
         return view('admin.pengaturan');
     })->name('pengaturan');
@@ -59,11 +56,13 @@ Route::get('/', function () {
 
     // Perbaikan resource petani
     Route::resource('petani', PetaniController::class)->names('petani');
+    
+    Route::resource('padi', PadiController::class)->names('padi');
 });
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [LoginController::class, 'login']);
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-    Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-    Route::post('/register', [RegisterController::class, 'register']);
+    Route::get('/register', [PetaniRegisterController::class, 'showForm'])->name('register');
+    Route::post('/register', [PetaniRegisterController::class, 'register']);

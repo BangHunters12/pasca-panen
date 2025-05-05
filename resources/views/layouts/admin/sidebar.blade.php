@@ -34,7 +34,7 @@
                               </a>
                           </li>
                           <li class="sidebar-item">
-                              <a class="sidebar-link" href="{{ route('admin.jenis_padi') }}">
+                              <a class="sidebar-link" href="{{ route('admin.padi.index') }}">
                                   <i class="ti ti-leaf"></i> Jenis Padi
                               </a>
                           </li>
