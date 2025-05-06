@@ -48,13 +48,6 @@ Route::get('/', function () {
         return view('admin.pengaturan');
     })->name('pengaturan');
 
-    // Route::get('/login', function () {
-    //     return view('admin.login');
-    // })->name('login');
-
-    
-
-    // Perbaikan resource petani
     Route::resource('petani', PetaniController::class)->names('petani');
     
     Route::resource('padi', PadiController::class)->names('padi');
@@ -66,3 +59,8 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 
     Route::get('/register', [PetaniRegisterController::class, 'showForm'])->name('register');
     Route::post('/register', [PetaniRegisterController::class, 'register']);
+    
+    Route::get('/alat_bajak', function () {
+        return view('user.layanan.alatpanen');
+    });
+

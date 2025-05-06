@@ -122,7 +122,7 @@
                                 <img src="{{ asset('assets/images/logos/google.png') }}" alt="Google"> Masuk dengan Google
                             </a>
 
-                            <div class="text-center">
+                            <div class="text-center">'assets/images/logos/google.png'
                                 <a href="#">Lupa kata sandi?</a><br>
                                 <small>Belum punya akun? <a href="{{ route('register') }}">Daftar sekarang</a></small>
                             </div>
@@ -132,7 +132,6 @@
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

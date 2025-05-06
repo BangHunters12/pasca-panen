@@ -18,7 +18,7 @@
             </li>
             <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Alat Tanam</a></li>
+                <li><a href="{{ url('/alat_bajak') }}" class="nav-link {{ Request::is('alatpanen') ? 'active' : '' }}">Alat Bajak</a></li>
                     <li><a class="dropdown-item" href="#">Alat Panen</a></li>
                     <li><a class="dropdown-item" href="#">Tenaga Tanam</a></li>
                     <li><a class="dropdown-item" href="#">Petani Baru</a></li>
