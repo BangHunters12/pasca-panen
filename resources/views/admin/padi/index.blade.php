@@ -15,6 +15,7 @@
                 <th>Bentuk</th>
                 <th>Tekstur Beras</th>
                 <th>Harga</th>
+                <th>Stok</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -30,6 +31,7 @@
                 <td>{{ $padi->bentuk }}</td>
                 <td>{{ $padi->tekstur }}</td>
                 <td>Rp{{ number_format($padi->harga, 0, ',', '.') }}</td>
+                <td>{{ $padi->stok }}</td>
                 <td>
                     <a href="{{ route('admin.padi.edit', $padi) }}" class="btn btn-warning">Edit</a>
                     <form action="{{ route('admin.padi.destroy', $padi) }}" method="POST" class="d-inline">

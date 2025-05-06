@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetaniController;
 use App\Http\Controllers\PadiController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\HomeController;
 
 // user
-Route::get('/', function () {
-    return view(view: 'user.beranda');
-})->name(name: 'beranda');
+Route::get('/', [HomeController::class, 'index'])->name('beranda');
 
 Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard', function () {
@@ -50,4 +50,6 @@ Route::prefix('/admin')->name('admin.')->group(function () {
     Route::resource('petani', PetaniController::class)->names('petani');
     
     Route::resource('padi', PadiController::class)->names('padi');
+
+    Route::resource('berita', BeritaController::class)->names('berita');
 });

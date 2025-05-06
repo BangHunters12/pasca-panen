@@ -47,6 +47,7 @@
               <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.produksi_beras') }}"><i class="ti ti-building"></i> Produksi Beras</a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.hutang') }}"><i class="ti ti-cash"></i> Hutang Petani</a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.penyewaan') }}"><i class="ti ti-tool"></i> Penyewaan</a></li>
+              <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.berita.index') }}"><i class="ti ti-news"></i> Berita</a></li>
 
               <li class="nav-small-cap mt-2">
                   <i class="ti ti-dots nav-small-cap-icon fs-4"></i>

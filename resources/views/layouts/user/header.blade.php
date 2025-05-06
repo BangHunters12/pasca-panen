@@ -26,12 +26,12 @@
             </li>
             <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-down"></i></a>
               <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Berita Tani</a></li>
-                  <li><a class="dropdown-item" href="#">Harga Padi</a></li>
-                  <li><a class="dropdown-item" href="#">Tips Bertani</a></li>
+                  <li><a class="dropdown-item" href="#berita">Berita Tani</a></li>
+                  <li><a class="dropdown-item" href="#harga">Harga Padi</a></li>
+                  <li><a class="dropdown-item" href="#tips">Tips Bertani</a></li>
               </ul>
           </li>
-            <li><a href="#contact" class="nav-link">Kontak</a></li>
+            <li><a href="#kontak" class="nav-link">Kontak</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
