@@ -46,7 +46,7 @@
 
 </section>
 
-<section id="about" class="about section bg-success bg-opacity-25 py-5">
+<section id="about" class="about section py-5">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row gy-4 align-items-center">
 
@@ -89,7 +89,8 @@
   </div>
 </section>
 
-<section id="berita" class="py-5 bg-light">
+<section id="berita" class="berita section bg-success bg-opacity-25 py-5">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
   <div class="container">
     <h2 class="text-center text-success fw-bold mb-2">BERITA PERTANIAN</h2>
     <p class="text-center text-warning mb-5 fs-5">
@@ -97,87 +98,58 @@
     </p>
 
     <div class="row">
-      <!-- Card 1 -->
+      @foreach($berita as $item)
       <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
-          <img src="{{ asset('assets/images/logos/background.jpeg') }}" class="card-img-top" alt="Berita Pertanian">
+          <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img-top" alt="{{ $item->judul }}"  style="height: 200px; object-fit: cover; object-position: center;">
           <div class="card-body text-center">
             <p class="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+              {{ Str::limit($item->isi, 100) }}
             </p>
-            <a href="#" class="text-primary fw-semibold">Baca Selengkapnya !!</a>
+            <a href="{{ route('berita.show', $item->id_berita) }}" class="text-primary fw-semibold">Baca Selengkapnya !!</a>
           </div>
         </div>
       </div>
-
-      <!-- Card 2 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="{{ asset('assets/images/logos/background.jpeg') }}" class="card-img-top" alt="Berita Pertanian">
-          <div class="card-body text-center">
-            <p class="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-            </p>
-            <a href="#" class="text-primary fw-semibold">Baca Selengkapnya !!</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="{{ asset('assets/images/logos/background.jpeg') }}" class="card-img-top" alt="Berita Pertanian">
-          <div class="card-body text-center">
-            <p class="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-            </p>
-            <a href="#" class="text-primary fw-semibold">Baca Selengkapnya !!</a>
-          </div>
-        </div>
-      </div>
-
+      @endforeach
     </div>
   </div>
 </section>
 
-<section id="harga" class="py-5 bg-light">
-  <div class="container">
+<section id="harga" class=" harga section py-5 bg-light" >
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
     <h2 class="text-center text-success mb-2 fw-bold">HARGA PADI</h2>
-    <p class="text-center mb-5 fst-italic fw-semibold">
-      "Update harga padi setiap hari agar kamu nggak ketinggalan info pasar."
+    <p class="text-center text-secondary mb-5 fs-5">
+      Update harga padi setiap hari agar kamu nggak ketinggalan info pasar.
     </p>
 
     <div class="row">
-      <!-- Kartu 1 -->
+      @foreach ($padi as $item)
       <div class="col-md-4 mb-4">
-        <div class="card h-100 border-success">
-          <!-- Tambahkan padding dan border di gambar -->
-          <div class="p-2">
-            <img src="{{ asset('assets/images/logos/background.jpeg') }}" class="card-img-top rounded" alt="Padi">
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <!-- Kiri -->
-              <div class="col-6">
-                <p class="mb-1 text-warning"><strong>Tekstur:</strong><br> Lembut</p>
-                <p class="mb-0 text-warning"><strong>Harga/kg:</strong><br> Rp10.500</p>
-              </div>
-              <!-- Kanan -->
-              <div class="col-6">
-                <p class="mb-1 text-warning"><strong>Nama:</strong><br> Cihirang</p>
-                <p class="mb-1 text-warning"><strong>Warna:</strong><br> Kuning Bersih</p>
-                <p class="mb-0 text-warning"><strong>Bentuk:</strong><br> Panjang</p>
-              </div>
-            </div>
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+          <img src="{{ asset('storage/' . $item->gambar) }}"
+               class="card-img-top"
+               alt="{{ $item->nama }}"
+               style="height: 200px; object-fit: cover;">
+
+          <div class="card-body text-center">
+            <h5 class="card-title text-dark fw-bold">{{ ucfirst($item->nama_padi) }}</h5>
+            <hr class="my-2">
+            <ul class="list-unstyled text-secondary small">
+              <li><strong>Warna:</strong> {{ $item->warna }}</li>
+              <li><strong>Tekstur:</strong> {{ $item->tekstur }}</li>
+              <li><strong>Bentuk:</strong> {{ $item->bentuk }}</li>
+              <li><strong>Harga/kg:</strong> <span class="text-success fw-semibold">Rp{{ number_format($item->harga, 0, ',', '.') }}</span></li>
+            </ul>
           </div>
         </div>
       </div>
-
+      @endforeach
     </div>
   </div>
 </section>
 
-<section id="tips" class="py-5 bg-light">
+<section id="tips" class="tips section py-5" style="background-color: #D3EE98;">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="fw-bold text-success">TIPS BERTANI</h2>
@@ -330,6 +302,5 @@
     </div>
   </div>
 </section>
-
 
 @endsection

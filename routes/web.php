@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 
 // user
 Route::get('/', [HomeController::class, 'index'])->name('beranda');
+Route::get('/berita/{id}', [HomeController::class, 'show'])->name('berita.show');
 
 Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard', function () {

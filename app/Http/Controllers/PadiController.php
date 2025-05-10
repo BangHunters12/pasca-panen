@@ -30,7 +30,7 @@ class PadiController extends Controller
             'gambar' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
 
-        $gambarPath = $request->file('gambar')->store('public/gambar_padi');
+        $gambarPath = $request->file('gambar')->store('gambar_padi', 'public');
 
         Padi::create([
             'nama_padi' => $request->nama_padi,

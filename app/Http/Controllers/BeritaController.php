@@ -84,8 +84,8 @@ class BeritaController extends Controller
                 unlink(storage_path('app/public/gambar_berita/' . $berita->gambar));
             }
     
-            $gambarPath = $request->file('gambar')->store('public/gambar_berita');
-            $berita->gambar = basename($gambarPath);
+            $gambarPath = $request->file('gambar')->store('gambar_berita', 'public');
+            $berita->gambar = $gambarPath;
         }
     
         $berita->update([
