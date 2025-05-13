@@ -140,7 +140,7 @@
   </div>
 </section>
 
-<section id="harga-padi" class="py-5 bg-light">
+<section id="harga" class="py-5 bg-light">
   <div class="container">
     <h2 class="text-center text-success mb-2 fw-bold">HARGA PADI</h2>
     <p class="text-center mb-5 fst-italic fw-semibold">
@@ -177,7 +177,7 @@
   </div>
 </section>
 
-<section id="tips-bertani" class="py-5 bg-light">
+<section id="tips" class="py-5 bg-light">
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="fw-bold text-success">TIPS BERTANI</h2>

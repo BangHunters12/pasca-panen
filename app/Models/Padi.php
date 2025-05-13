@@ -19,5 +19,6 @@ class Padi extends Model
         'tekstur',
         'harga',
         'gambar',
+        'stok',
     ];
 }

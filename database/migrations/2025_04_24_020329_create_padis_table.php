@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string(column: 'bentuk');
             $table->string('tekstur');
             $table->decimal(column: 'harga');
-            $table->integer('stok');
+            $table->integer('stok')->default(0)->change();
             $table->string(column: 'gambar');
             $table->string('satuan')->default('kg');
             $table->timestamps();
