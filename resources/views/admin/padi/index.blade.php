@@ -15,6 +15,7 @@
                 <th>Bentuk</th>
                 <th>Tekstur Beras</th>
                 <th>Harga</th>
+                <th>Stok</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -23,13 +24,14 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>
-                    <img src="{{ asset('storage/gambar_padi/'.$padi->gambar) }}" alt="{{ $padi->nama_padi }}" class="img-fluid">
+                    <img src="{{ asset('storage/'.$padi->gambar) }}" alt="{{ $padi->nama_padi }}" class="img-fluid" style="width: 120px; height: 90px; object-fit: cover; border-radius: 5px;">
                 </td>
                 <td>{{ $padi->nama_padi }}</td>
                 <td>{{ $padi->warna }}</td>
                 <td>{{ $padi->bentuk }}</td>
                 <td>{{ $padi->tekstur }}</td>
                 <td>Rp{{ number_format($padi->harga, 0, ',', '.') }}</td>
+                <td>{{ $padi->stok }}</td>
                 <td>
                     <a href="{{ route('admin.padi.edit', $padi) }}" class="btn btn-warning">Edit</a>
                     <form action="{{ route('admin.padi.destroy', $padi) }}" method="POST" class="d-inline">

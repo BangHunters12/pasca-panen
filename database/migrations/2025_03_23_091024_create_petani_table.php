@@ -7,18 +7,18 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up()
     {
-        Schema::create('petanis', function (Blueprint $table) {
-            $table->id('id_petani'); // Primary key
-            $table->string('nama_petani');
-            $table->text('alamat_petani');
+        Schema::create('petani', function (Blueprint $table) {
+            $table->id('id_petani');
+            $table->string('nama_lengkap');
             $table->string('username')->unique();
+            $table->enum('gender', ['Laki-laki', 'Perempuan']);
             $table->string('email')->unique();
+            $table->string('no_telp');
+            $table->text('alamat');
             $table->string('password');
-            $table->string('no_hp', 15);
-            $table->enum('level', ['prepetani', 'petani', 'admin'])->default('prepetani'); // Status petani
-            $table->timestamps(); // created_at & updated_at
+            $table->timestamps();
         });
-    }
+    }        
 
     public function down()
     {

@@ -9,7 +9,7 @@ class Padi extends Model
 {
     use HasFactory;
 
-    protected $table = 'padis';
+    protected $table = 'padi';
 
     protected $primaryKey = 'id_padi';
     protected $fillable = [
@@ -19,5 +19,6 @@ class Padi extends Model
         'tekstur',
         'harga',
         'gambar',
+        'stok',
     ];
 }

@@ -30,6 +30,10 @@
             <label class="form-label">Harga</label>
             <input type="number" name="harga" class="form-control" required>
         </div>
+        <div class="mb-3">
+            <label class="form-label">stok</label>
+            <input type="number" name="stok" class="form-control" required>
+        </div>
         <button type="submit" class="btn btn-success">Simpan</button>
     </form>
 </div>
