@@ -45,6 +45,89 @@
     }
 </style>
 
+<!-- CSS Styles -->
+<style>
+  .light-green-bg {
+    background-color: #e8f5e9; /* Warna hijau muda */
+    color: #333; /* Warna teks lebih gelap untuk kontras */
+  }
+  
+  .footer {
+    padding: 30px 0 15px; /* Diperkecil dari 60px 0 30px */
+  }
+  
+  .footer-top {
+    padding-bottom: 15px; /* Jarak bawah konten footer */
+  }
+  
+  .footer h4 {
+    color: #2e7d32; /* Warna hijau lebih gelap untuk judul */
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .footer-links li, .footer-hours li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-contact p, .footer-hours p {
+    margin-bottom: 5px;
+  }
+  
+  .footer-contact strong {
+    color: #2e7d32;
+  }
+  
+  .newsletter-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #a5d6a7;
+  }
+  
+  .newsletter-form button {
+    background: #2e7d32; /* Warna hijau lebih gelap */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .newsletter-form button:hover {
+    background: #1b5e20; /* Warna hijau lebih gelap saat hover */
+  }
+  
+  .credits a {
+    color: #2e7d32;
+    text-decoration: none;
+  }
+  
+  .credits a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Warna untuk ikon dan link */
+  .footer-links a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #2e7d32;
+  }
+  
+  .bi-chevron-right {
+    color: #2e7d32;
+    font-size: 0.8rem;
+  }
+  .copyright {
+    padding: 10px 0; /* Diperkecil dari 20px 0 */
+  }
+</style>
+
   <!-- =======================================================
   * Template Name: Gp
   * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
@@ -59,3 +142,17 @@
 @include('layouts.user.header')
 @yield("content")
 @include('layouts.user.footer')
+
+ <!-- Vendor JS Files -->
+ <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+ <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+ <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+ <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+
+ <!-- Main JS File -->
+ <script src="{{ asset('assets/js/main.js') }}"></script>
+
+ <script>
+   AOS.init();
+ </script>
+</body>

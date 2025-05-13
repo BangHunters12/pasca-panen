@@ -1,74 +1,63 @@
-<footer id="footer" class="footer dark-background">
-
+<footer id="footer" class="footer light-green-bg">
   <div class="footer-top">
     <div class="container">
       <div class="row gy-4">
+        <!-- Company Info Column -->
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">GP</span>
+            <img src="{{ asset('assets/images/logos/logoapk.png') }}" alt="Logo" style="height: 40px;">
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <p>Klabang, Bondowoso</p>
+            <p>Ds Karang Sengon</p>
+            <p class="mt-3"><strong>Telepon:</strong> <span>098605840495</span></p>
+            <p><strong>Email:</strong> <span>Tani@gmail.com</span></p>
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+        <!-- Links Column -->
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Tautan</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#"> Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#"> About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#"> Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#"> Terms of service</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#"> Privacy policy</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Beranda</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Tentang Kami</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Produk</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Layanan</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Informasi</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Kontak</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#"> Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#"> Web Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#"> Product Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#"> Marketing</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#"> Graphic Design</a></li>
+        <!-- Working Hours Column -->
+        <div class="col-lg-3 col-md-6 footer-hours">
+          <h4>Jam Kerja</h4>
+          <p>Berikut jam Kerja Kami:</p>
+          <ul class="working-hours">
+            <li><strong>Senin - Jumat:</strong> 07.00 - 17.00</li>
+            <li><strong>Sabtu - Minggu:</strong> 05.00 - 21.00</li>
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+        <!-- Newsletter Column -->
+        <div class="col-lg-3 col-md-6 footer-newsletter">
+          <h4>Buletin Kami</h4>
+          <p>Berlangganan buletin kami dan dapatkan berita terbaru tentang produk dan layanan kami!</p>
+          <form action="#" method="post" class="newsletter-form">
+            <input type="email" name="email" placeholder="Email Anda" required>
+            <button type="submit">Berlangganan</button>
           </form>
         </div>
-
       </div>
     </div>
   </div>
 
   <div class="copyright">
     <div class="container text-center">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">GP</strong> <span>All Rights Reserved</span></p>
+      <p>© Copyright <strong>GP</strong> All Rights Reserved</p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Distributed by <a href="https://themewagon.com/">ThemeWagon</a>
       </div>
     </div>
   </div>
-
 </footer>
