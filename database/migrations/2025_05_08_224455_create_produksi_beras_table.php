@@ -13,15 +13,16 @@ return new class extends Migration
     {
         Schema::create('produksi_beras', function (Blueprint $table) {
             $table->id('id_produksi');
-            $table->bigInteger('id_padi')->unsigned(); // Foreign Key
-            $table->bigInteger('id_produk')->unsigned(); // Foreign Key
+            $table->unsignedBigInteger('id_padi');
+            $table->unsignedBigInteger('id_produk');
             $table->date('tanggal_produksi');
             $table->integer('jumlah_padi');
             $table->integer('jumlah_beras');
             $table->text('keterangan');
-            $table->foreign('id_padi')->references('id_padi')->on('padis');
-            $table->foreign('id_produk')->references('id_produk')->on('produks');
             $table->timestamps();
+        
+            $table->foreign('id_padi')->references('id_padi')->on('padi');
+            $table->foreign('id_produk')->references('id_produk')->on('produk');
         });
     }
 
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('produksi_beras_');
+        Schema::dropIfExists('produksi_beras');
     }
 };
