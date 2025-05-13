@@ -118,7 +118,7 @@
 <section id="harga" class=" harga section py-5 bg-light" >
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <h2 class="text-center text-success mb-2 fw-bold">HARGA PADI</h2>
-    <p class="text-center text-secondary mb-5 fs-5">
+    <p class="text-center text-warning mb-5 fs-5">
       Update harga padi setiap hari agar kamu nggak ketinggalan info pasar.
     </p>
 
@@ -153,7 +153,9 @@
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="fw-bold text-success">TIPS BERTANI</h2>
-      <p class="lead text-muted">"Tips praktis untuk hasil panen maksimal dan pertanian yang lebih efisien."</p>
+      <p class="text-center text-warning mb-5 fs-5">
+      Tips praktis untuk hasil panen maksimal dan pertanian yang lebih efisien.
+    </p>
     </div>
 
     <div class="row g-4">
@@ -235,11 +237,7 @@
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <!-- Peta -->
-    <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-      <iframe style="border:0; width: 100%; height: 270px;" 
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" 
-              frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div><!-- End Google Maps -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d305.20709488841493!2d113.95634924356868!3d-7.8590460744844055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1747109575579!5m2!1sid!2sid" width="100%" height="270px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><!-- End Google Maps -->
 
     <div class="row gy-4">
       <!-- Kolom Informasi -->

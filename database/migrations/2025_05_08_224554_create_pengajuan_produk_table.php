@@ -11,15 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengajuans', function (Blueprint $table) {
+        Schema::create('pengajuan_produk', function (Blueprint $table) {
             $table->id('id_pengajuan');
-            $table->bigInteger('id_petani')->unsigned(); // Foreign Key
-            $table->string('jenis_pengajuan', 100);
+            $table->unsignedBigInteger('id_petani');
+            $table->unsignedBigInteger('id_produk');
+            $table->integer('jumlah');
             $table->date('tanggal_pengajuan');
-            $table->enum('status', ['dalam_proses', 'setuju', 'ditolak']);
+            $table->string('status');
             $table->text('keterangan');
-            $table->foreign('id_petani')->references('id_petani')->on('petanis');
             $table->timestamps();
+        
+            $table->foreign('id_petani')->references('id_petani')->on('petani');
+            $table->foreign('id_produk')->references('id_produk')->on('produk');
         });
     }
 
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pengajuans');
+        Schema::dropIfExists('penjualan_produk');
     }
 };
