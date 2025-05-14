@@ -5,9 +5,13 @@ use App\Http\Controllers\PetaniController;
 use App\Http\Controllers\PadiController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PengajuanPadiController;
 
 // user
 Route::get('/', [HomeController::class, 'index'])->name('beranda');
+Route::get('/berita/{id}', [HomeController::class, 'show'])->name('berita.show');
+Route::get('/penjualan-padi', [PengajuanPadiController::class, 'info'])->name('user.penjualan_padi.penjualanpadi');
+Route::get('/penjualan-padi', [PengajuanPadiController::class, 'penjualanView'])->name('user.penjualan_padi.penjualanpadi');
 
 Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard', function () {

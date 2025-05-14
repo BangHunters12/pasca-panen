@@ -24,7 +24,7 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>
-                    <img src="{{ asset('storage/gambar_padi/'.$padi->gambar) }}" alt="{{ $padi->nama_padi }}" class="img-fluid">
+                    <img src="{{ asset('storage/'.$padi->gambar) }}" alt="{{ $padi->nama_padi }}" class="img-fluid" style="width: 120px; height: 90px; object-fit: cover; border-radius: 5px;">
                 </td>
                 <td>{{ $padi->nama_padi }}</td>
                 <td>{{ $padi->warna }}</td>

@@ -15,11 +15,10 @@ return new class extends Migration
             $table->id('id_pengajuan');
             $table->unsignedBigInteger('id_petani');
             $table->unsignedBigInteger('id_padi');
-            $table->integer('jumlah_kg');
-            $table->decimal('harga', 10, 2);
-            $table->decimal('total_harga', 12, 2);
+            $table->boolean('perlu_mobil');
+            $table->integer('jumlah_karung');
             $table->date('tanggal_pengajuan');
-            $table->string('status');
+            $table->enum('status', ['menunggu persetujuan', 'disetujui', 'ditolak'])->default('menunggu persetujuan');
             $table->text('keterangan');
             $table->timestamps();
         

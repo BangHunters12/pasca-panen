@@ -18,9 +18,8 @@ return new class extends Migration
             $table->string('bentuk');
             $table->string('tekstur');
             $table->decimal('harga', 10, 2);
-            $table->integer('stok');
+            $table->integer('stok')->default(0);
             $table->string('gambar');
-            $table->integer('satuan_kg');
             $table->timestamps();
         });
     }
