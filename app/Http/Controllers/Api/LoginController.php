@@ -46,7 +46,7 @@ class LoginController extends Controller
         'message' => 'Login successful',
         'token' => $token,
         'user' => [
-            'id' => $petani->id,
+            'id_petani' => $petani->id_petani,
             'nama_lengkap' => $petani->nama_lengkap,
             'username' => $petani->username,
             'gender' => $petani->gender,
