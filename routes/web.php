@@ -117,3 +117,4 @@ Route::prefix('/admin')->name('admin.')->group(function () {
 
     Route::resource('berita', BeritaController::class)->names('berita');
 });
+
