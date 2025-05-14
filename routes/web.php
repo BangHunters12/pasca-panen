@@ -8,6 +8,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengajuanPadiController;
+use App\Http\Controllers\PengajuanSewaController;
 
 
 // user
@@ -29,9 +30,12 @@ Route::prefix('/admin')->name('admin.')->group(function () {
         return view('admin.produk');
     })->name('produk');
 
-    Route::get('/penyewaan', function () {
-        return view('admin.penyewaan');
-    })->name('penyewaan');
+
+Route::get('/pengajuan_sewa', [PengajuanSewaController::class, 'index'])->name('penyewaan');
+Route::post('/pengajuan_sewa', [PengajuanSewaController::class, 'store'])->name('pengajuan_sewa.store');
+Route::put('/pengajuan_sewa/{id}', [PengajuanSewaController::class, 'update'])->name('pengajuan_sewa.update');
+Route::delete('/pengajuan_sewa/{id}', [PengajuanSewaController::class, 'destroy'])->name('pengajuan_sewa.destroy');
+
 
     Route::get('/pengiriman', function () {
         return view('admin.pengiriman');
