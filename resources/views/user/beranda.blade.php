@@ -237,6 +237,7 @@
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <!-- Peta -->
+    <div class="row gy-4">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d305.20709488841493!2d113.95634924356868!3d-7.8590460744844055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1747109575579!5m2!1sid!2sid" width="100%" height="270px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><!-- End Google Maps -->
 
     <div class="row gy-4">

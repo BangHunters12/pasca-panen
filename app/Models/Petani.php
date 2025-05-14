@@ -12,7 +12,7 @@ class Petani extends Authenticatable
 {
     use HasApiTokens,HasFactory, Notifiable;
     protected $table = 'petani'; 
-
+    protected $primaryKey = 'id_petani';
     protected $fillable = [
         'nama_lengkap',
         'username',
@@ -21,6 +21,7 @@ class Petani extends Authenticatable
         'no_telp',
         'alamat',
         'password',
+        'role',
     ];
 
     protected $hidden = [

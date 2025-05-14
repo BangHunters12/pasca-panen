@@ -36,11 +36,12 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+    // ...
+    'petani' => [
+        'driver' => 'session',
+        'provider' => 'petani',
     ],
+],
 
     /*
     |--------------------------------------------------------------------------
@@ -60,16 +61,12 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\Petani::class),
-        ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+    // ...
+    'petanis' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Petani::class,
     ],
+],
 
     /*
     |--------------------------------------------------------------------------

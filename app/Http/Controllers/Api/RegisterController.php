@@ -40,7 +40,7 @@ class RegisterController extends Controller
         return response()->json([
             'message' => 'Registrasi berhasil',
             'petani' => [
-                'id_petani' => $petani->id_petani,
+                'id' => $petani->id,
                 'nama_lengkap' => $petani->nama_lengkap,
                 'username' => $petani->username,
                 'gender' => $petani->gender,
