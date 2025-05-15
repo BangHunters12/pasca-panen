@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->text('alamat');
             $table->string('password');
             $table->timestamps();
+            $table->enum('role', ['admin', 'petani'])->default('petani');
         });
     }        
 

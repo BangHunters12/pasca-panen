@@ -7,7 +7,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-            <li><a href="{{ url('/#hero') }}" class="nav-link active">Beranda</a></li>
+            <li><a href="{{ url('/#beranda') }}" class="nav-link active">Beranda</a></li>
             <li><a href="{{ url('/#about') }}" class="nav-link active">Tentang kami</a></li>
             <li><a href="{{ route('user.penjualan_padi.penjualanpadi') }}" class="nav-link">Penjualan Padi</a></li>
 
