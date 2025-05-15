@@ -50,14 +50,6 @@
       </div>
     </div>
   </div>
-
-  <div class="copyright">
-    <div class="container text-center">
-      <p>© Copyright <strong>GP</strong> All Rights Reserved</p>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        Distributed by <a href="https://themewagon.com/">ThemeWagon</a>
-      </div>
     </div>
   </div>
 </footer>
