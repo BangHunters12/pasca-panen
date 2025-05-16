@@ -13,9 +13,17 @@ return [
     |
     */
 
-    'defaults' => [
-        'guard' => env('AUTH_GUARD', 'web'),
-        'passwords' => env('AUTH_PASSWORD_BROKER', 'users'),
+    // 'defaults' => [
+    //     'guard' => env('AUTH_GUARD', 'web'),
+    //     'passwords' => env('AUTH_PASSWORD_BROKER', 'users'),
+    // ],
+    //     'defaults' => [
+    //     'guard' => 'web',
+    //     'passwords' => 'users',
+    // ],
+    'default' => [
+        'guard' => 'petani',
+        'passwords' => 'petanis',
     ],
 
     /*
@@ -35,13 +43,23 @@ return [
     |
     */
 
+    //     'guards' => [
+    //     'web' => [
+    //         'driver' => 'session',
+    //         'provider' => 'petani', // ubah dari 'users' ke 'petani'
+    //     ],
+    //     // ... kalau ada guard lain
+    // ],
     'guards' => [
-    // ...
-    'petani' => [
-        'driver' => 'session',
-        'provider' => 'petani',
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'petani' => [
+            'driver' => 'session',
+            'provider' => 'petanis',
+        ],
     ],
-],
 
     /*
     |--------------------------------------------------------------------------
@@ -60,13 +78,25 @@ return [
     |
     */
 
+    //     'providers' => [
+    //     'petani' => [
+    //         'driver' => 'eloquent',
+    //         'model' => App\Models\Petani::class,
+    //     ],
+    // ],
+
     'providers' => [
-    // ...
-    'petanis' => [
-        'driver' => 'eloquent',
-        'model' => App\Models\Petani::class,
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Petani::class,
+        ],
     ],
-],
+
+    //     'petanis' => [
+    //         'driver' => 'eloquent',
+    //         'model' => App\Models\Petani::class,
+    //     ],
+    // ],
 
     /*
     |--------------------------------------------------------------------------
@@ -95,6 +125,7 @@ return [
             'throttle' => 60,
         ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------

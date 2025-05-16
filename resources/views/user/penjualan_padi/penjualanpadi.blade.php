@@ -8,7 +8,7 @@
     <p class="lead">Catat penjualan padi ke pembeli dengan sistem yang rapi.</p>
     </div>
 
-        <!-- Gambar -->
+        <!-- Gambar -->     
         <div class="text-center mb-3 mt-2">
             <img src="{{ asset('assets/images/logos/jualpadi.jpg') }}" alt="Penjualan Padi" class="img-fluid rounded" style="max-height: 350px; object-fit: cover;">
         </div>

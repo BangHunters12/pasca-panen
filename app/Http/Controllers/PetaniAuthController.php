@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use App\Models\Petani;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class PetaniAuthController extends Controller
 {
@@ -21,38 +21,40 @@ class PetaniAuthController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->only('username', 'password');
+        $request->validate([
+            'login' => 'required|string',
+            'password' => 'required|string',
+        ]);
 
-        if (Auth::guard('Petani')->attempt($credentials)) {
-            $request->session()->regenerate();
-            $user = Auth::guard('petani')->user();
+        $petani = Petani::where('email', $request->login)
+            ->orWhere('username', $request->login)
+            ->first();
+
+        if ($petani && Hash::check($request->password, $petani->password)) {
+            Session::put('petani', $petani);
 
 
-            if ($user->role === 'admin') {
-                return redirect()->route('admin.dashboard');
-            } else {
-                return redirect()->route('beranda');
-            }
+            return redirect('/#')->with('success', 'Login berhasil');
         }
 
         return back()->withErrors([
-            'username' => 'Username atau password salah.',
+            'login' => 'Username/email atau password salah',
         ])->withInput();
     }
 
     public function register(Request $request)
     {
         $request->validate([
-            'nama_lengkap' => 'required',
-            'username' => 'required|unique:petani',
+            'nama_lengkap' => 'required|string|max:255',
+            'username' => 'required|string|unique:petani,username',
             'gender' => 'required|in:Laki-laki,Perempuan',
-            'email' => 'required|email|unique:petani',
-            'no_telp' => 'required',
-            'alamat' => 'required',
-            'password' => 'required|confirmed|min:6',
+            'email' => 'required|email|unique:petani,email',
+            'no_telp' => 'required|string|max:20',
+            'alamat' => 'required|string',
+            'password' => 'required|string|min:6|confirmed',
         ]);
 
-        Petani::create([
+        $petani = Petani::create([
             'nama_lengkap' => $request->nama_lengkap,
             'username' => $request->username,
             'gender' => $request->gender,
@@ -60,17 +62,16 @@ class PetaniAuthController extends Controller
             'no_telp' => $request->no_telp,
             'alamat' => $request->alamat,
             'password' => Hash::make($request->password),
+            'role' => 'petani', // default value
         ]);
 
-        return redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');
+        Session::put('petani', $petani);
+        return redirect('/login')->with('success', 'Registrasi berhasil');
     }
 
-    public function logout(Request $request)
+    public function logout()
     {
-        Auth::guard('petani')->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect('/');
+        Session::forget('petani');
+        return redirect('/login')->with('success', 'Berhasil logout');
     }
 }

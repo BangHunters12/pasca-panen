@@ -1,18 +1,25 @@
 <?php
-
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 
 class RoleMiddleware
 {
-    public function handle($request, Closure $next, $role)
+    public function handle(Request $request, Closure $next, ...$roles): Response
     {
-        if (Auth::guard('petani')->check() && Auth::guard('petani')->user()->role === $role) {
-            return $next($request);
+        if (!Auth::check()) {
+            return redirect('login');
         }
 
-        abort(403, 'Akses ditolak.');
+        $user = Auth::user();
+
+        if (!in_array($user->role, $roles)) {
+            abort(403, 'Akses ditolak.');
+        }
+
+        return $next($request);
     }
 }

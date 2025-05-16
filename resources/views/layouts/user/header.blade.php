@@ -9,7 +9,7 @@
         <ul>
             <li><a href="{{ url('/#beranda') }}" class="nav-link active">Beranda</a></li>
             <li><a href="{{ url('/#about') }}" class="nav-link active">Tentang kami</a></li>
-            <li><a href="{{ route('user.penjualan_padi.penjualanpadi') }}" class="nav-link">Penjualan Padi</a></li>
+            <li><a href="{{ route('user.penjualan_padi.index') }}" class="nav-link">Penjualan Padi</a></li>
 
             <li class="dropdown"><a href="#"><span>Produk</span> <i class="bi bi-chevron-down"></i></a>
                 <ul class="dropdown-menu">
@@ -40,6 +40,6 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
 
-    <a class="btn-getstarted" href="#about">Get Started</a>
+    <a class="btn-getstarted" href="{{ url('/login') }}">Get Started</a>
 </div>
 </header>

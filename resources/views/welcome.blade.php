@@ -30,7 +30,7 @@
           <ul id="sidebarnav">
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">Home</span>
+              <span class="hide-menu">Dashboard</span>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./index.html" aria-expanded="false">
@@ -400,7 +400,7 @@
                             <span class="fw-normal">Project Manager</span>                          
                         </td>
                         <td class="border-bottom-0">
-                          <p class="mb-0 fw-normal">Real Homes WP Theme</p>
+                          <p class="mb-0 fw-normal">Real Dashboards WP Theme</p>
                         </td>
                         <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">

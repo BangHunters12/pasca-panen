@@ -1,37 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login Petani</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <h3 class="text-center">Login</h3>
-            @if(session('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
-            @endif
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <div class="mb-3">
-                    <label>Username</label>
-                    <input type="text" name="username" class="form-control" required value="{{ old('username') }}">
-                </div>
-                <div class="mb-3">
-                    <label>Password</label>
-                    <input type="password" name="password" class="form-control" required>
-                </div>
-                @error('username')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-                <div class="d-grid">
-                    <button class="btn btn-primary">Login</button>
-                </div>
-                <p class="mt-3 text-center">Belum punya akun? <a href="{{ route('register') }}">Daftar</a></p>
-            </form>
+<x-guest-layout>
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
+
+        <!-- Login Field (Email atau Username) -->
+        <div>
+            <x-input-label for="login" value="Email atau Username" />
+            <x-text-input id="login" class="block mt-1 w-full" type="text" name="login" :value="old('login')" required autofocus />
+            <x-input-error :messages="$errors->get('login')" class="mt-2" />
         </div>
-    </div>
-</div>
-</body>
-</html>
+
+        <!-- Password -->
+        <div class="mt-4">
+            <x-input-label for="password" value="Password" />
+            <x-text-input id="password" class="block mt-1 w-full"
+                          type="password"
+                          name="password"
+                          required autocomplete="current-password" />
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        </div>
+
+        <!-- Remember Me -->
+        <div class="block mt-4">
+            <label for="remember_me" class="inline-flex items-center">
+                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+                <span class="ml-2 text-sm text-gray-600">Ingat saya</span>
+            </label>
+        </div>
+
+        <div class="flex items-center justify-end mt-4">
+            @if (Route::has('password.request'))
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                    Lupa password?
+                </a>
+            @endif
+
+            <x-primary-button class="ml-3">
+                Masuk
+            </x-primary-button>
+        </div>
+    </form>
+</x-guest-layout>
