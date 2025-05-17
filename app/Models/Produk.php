@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produk extends Model
 {
-    protected $table = 'produks';
+    protected $table = 'produk';
     protected $primaryKey = 'id_produk';
     protected $fillable = ['nama_produk', 'kategori', 'harga', 'stok', 'satuan'];
 }

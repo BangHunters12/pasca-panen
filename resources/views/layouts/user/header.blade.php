@@ -40,6 +40,6 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
 
-    <a class="btn-getstarted" href="#about">Get Started</a>
+    <a class="btn-getstarted" href="{{ url('/login') }}">Get Started</a>
 </div>
 </header>
