@@ -21,7 +21,7 @@
 
     {{-- Gambar --}}
     <div class="mb-4 text-center">
-        <img src="{{ asset('assets/images/logos/alat_bajak.jpg') }}" alt="Alat Bajak" class="img-fluid rounded shadow-sm">
+        <img src="{{ asset('assets/images/logos/alat_bajak.jpg') }}" alt="Alat Bajak" style="max-height: 350px; object-fit: cover;">
     </div>
 
     {{-- Konten Layanan --}}

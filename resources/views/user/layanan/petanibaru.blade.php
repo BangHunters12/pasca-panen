@@ -20,7 +20,7 @@
 </div>
     {{-- Gambar --}}
     <div class="mb-4 text-center">
-        <img src="{{ asset('assets/images/logos/petanibaru.jpg') }}" alt="Alat Bajak" class="img-fluid rounded shadow-sm">
+        <img src="{{ asset('assets/images/logos/petanibaru.jpg') }}" alt="Petani Baru" style="max-height: 350px; object-fit: cover;">
     </div>
 
     {{-- Konten Layanan --}}

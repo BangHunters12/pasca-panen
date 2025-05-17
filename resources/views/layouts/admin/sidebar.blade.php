@@ -28,11 +28,11 @@
                   </a>
                   <div class="collapse" id="petaniMenu">
                       <ul class="nav flex-column ms-3">
-                          <li class="sidebar-item">
+                          {{-- <li class="sidebar-item">
                               <a class="sidebar-link" href="{{ route('admin.petani.index') }}">
                                   <i class="ti ti-users"></i> Data Petani
                               </a>
-                          </li>
+                          </li> --}}
                           <li class="sidebar-item">
                               <a class="sidebar-link" href="{{ route('admin.padi.index') }}">
                                   <i class="ti ti-leaf"></i> Jenis Padi
@@ -46,6 +46,7 @@
               <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.produk') }}"><i class="ti ti-package"></i> Produk</a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.produksi_beras') }}"><i class="ti ti-building"></i> Produksi Beras</a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.hutang') }}"><i class="ti ti-cash"></i> Hutang Petani</a></li>
+              <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.pengajuanpadi.index') }}"><i class="ti ti-cash"></i>Pengajuan Padi</a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.penyewaan') }}"><i class="ti ti-tool"></i> Penyewaan</a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="{{ route('admin.berita.index') }}"><i class="ti ti-news"></i> Berita</a></li>
 

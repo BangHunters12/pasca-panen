@@ -54,44 +54,51 @@
       </div>
       <div class="modal-body">
         <form action="#" method="POST">
-            @csrf
+    @csrf
 
-            <div class="mb-3">
-                <label for="id_padi" class="form-label">Pilih Padi:</label>
-                <select name="id_padi" class="form-select" required>
-                    @foreach($padiList as $padi)
-                        <option value="{{ $padi->id_padi }}">{{ $padi->nama_padi }}</option>
-                    @endforeach
-                </select>
-            </div>
+    <!-- Tambahkan Nama Petani Dummy -->
+    <div class="mb-3">
+        <label class="form-label">Nama Petani</label>
+        <input type="text" class="form-control" value="Pak Budi" disabled>
+        <input type="hidden" name="id_petani" value="1"> <!-- Dummy ID -->
+    </div>
 
-            <div class="mb-3">
-                <label class="form-label">Perlu Mobil?</label>
-                <select name="perlu_mobil" class="form-select" required>
-                    <option value="1">Ya</option>
-                    <option value="0">Tidak</option>
-                </select>
-            </div>
+    <div class="mb-3">
+        <label for="id_padi" class="form-label">Pilih Padi:</label>
+        <select name="id_padi" class="form-select" required>
+            @foreach($padiList as $padi)
+                <option value="{{ $padi->id_padi }}">{{ $padi->nama_padi }}</option>
+            @endforeach
+        </select>
+    </div>
 
-            <div class="mb-3">
-                <label for="jumlah_karung" class="form-label">Jumlah Karung:</label>
-                <input type="number" name="jumlah_karung" class="form-control" required>
-            </div>
+    <div class="mb-3">
+        <label class="form-label">Perlu Mobil?</label>
+        <select name="perlu_mobil" class="form-select" required>
+            <option value="1">Ya</option>
+            <option value="0">Tidak</option>
+        </select>
+    </div>
 
-            <div class="mb-3">
-                <label for="tanggal_pengajuan" class="form-label">Tanggal Pengajuan:</label>
-                <input type="date" name="tanggal_pengajuan" class="form-control" required>
-            </div>
+    <div class="mb-3">
+        <label for="jumlah_karung" class="form-label">Jumlah Karung:</label>
+        <input type="number" name="jumlah_karung" class="form-control" required>
+    </div>
 
-            <div class="mb-3">
-                <label for="keterangan" class="form-label">Keterangan (Opsional):</label>
-                <textarea name="keterangan" class="form-control"></textarea>
-            </div>
+    <div class="mb-3">
+    <label for="tanggal_pengajuan" class="form-label">Tanggal Pengajuan:</label>
+    <input type="date" name="tanggal_pengajuan" class="form-control" required value="{{ date('Y-m-d') }}">
+    </div>
 
-            <div class="text-end">
-                <button type="submit" class="btn btn-success">Ajukan</button>
-            </div>
-        </form>
+    <div class="mb-3">
+        <label for="keterangan" class="form-label">Keterangan (Opsional):</label>
+        <textarea name="keterangan" class="form-control"></textarea>
+    </div>
+
+    <div class="text-end">
+        <button type="submit" class="btn btn-success">Ajukan</button>
+    </div>
+</form>
       </div>
     </div>
   </div>
