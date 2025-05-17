@@ -28,17 +28,12 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
 
-        $role = auth()->user()->role;
-
-        if ($role === 'admin') {
-            return redirect()->route('admin.dashboard');
-        } elseif ($role === 'petani') {
-            return redirect()->route('petani.dashboard');
-        }
-
-        return redirect('/');
+        if (auth::user()->role == 'admin') {
+            return redirect(route('admin.dashboard'));
     }
 
+    return redirect()->intended(RouteServiceProvider::HOME);
+}
     /**
      * Destroy an authenticated session.
      */

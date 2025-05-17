@@ -13,7 +13,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
      ->withMiddleware(function ( $middleware) {
         $middleware->alias([
-        'role' => \App\Http\Middleware\RoleMiddleware::class,
+        'PetaniMiddleware' => \App\Http\Middleware\PetaniMiddleware::class,
+        'AdminMiddleware' => \App\Http\Middleware\AdminMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

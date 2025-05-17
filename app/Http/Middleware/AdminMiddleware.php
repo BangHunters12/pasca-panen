@@ -8,11 +8,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 
 
-class RoleMiddleware
+class AdminMiddleware
 {
     public function handle($request, Closure $next): Response
     {
-        if (Auth::user()->usertype == "petani") {
+        if (Auth::user()->role == "admin") {
             return $next($request);
         }
 
