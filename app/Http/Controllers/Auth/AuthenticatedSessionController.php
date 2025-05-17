@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,27 +25,19 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-    $request->validate([
-        'email' => 'required|string',
-        'password' => 'required|string',
-    ]);
-
-    if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->boolean('remember'))) {
+        $request->authenticate();
         $request->session()->regenerate();
 
-        $user = Auth::user();
+        $role = auth()->user()->role;
 
-        if ($user->role === 'admin') {
+        if ($role === 'admin') {
             return redirect()->route('admin.dashboard');
+        } elseif ($role === 'petani') {
+            return redirect()->route('petani.dashboard');
         }
 
-        return redirect()->route('petani.dashboard');
+        return redirect('/');
     }
-
-    return back()->withErrors([
-        'email' => 'Email atau password salah.',
-    ]);
-}
 
     /**
      * Destroy an authenticated session.

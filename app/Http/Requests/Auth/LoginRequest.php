@@ -22,13 +22,13 @@ class LoginRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
     public function rules(): array
     {
         return [
-        'login' => ['required', 'string'],
-        'password' => ['required', 'string'],
+            'login' => ['required', 'string'],
+            'password' => ['required', 'string'],
         ];
     }
 
@@ -41,24 +41,23 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-    $loginField = filter_var($this->input('login'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $loginField = filter_var($this->input('login'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
-    $credentials = [
-        $loginField => $this->input('login'),
-        'password' => $this->input('password'),
-    ];
+        $credentials = [
+            $loginField => $this->input('login'),
+            'password' => $this->input('password'),
+        ];
 
-    if (!Auth::attempt($credentials, $this->boolean('remember'))) {
-        RateLimiter::hit($this->throttleKey());
+        if (!Auth::attempt($credentials, $this->boolean('remember'))) {
+            RateLimiter::hit($this->throttleKey());
 
-        throw ValidationException::withMessages([
-            'login' => __('auth.failed'),
-        ]);
+            throw ValidationException::withMessages([
+                'login' => __('auth.failed'),
+            ]);
+        }
+
+        RateLimiter::clear($this->throttleKey());
     }
-
-    RateLimiter::clear($this->throttleKey());
-    }
-
     /**
      * Ensure the login request is not rate limited.
      *
@@ -87,6 +86,6 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->string('email')).'|'.$this->ip());
+        return Str::transliterate(Str::lower($this->string('email')) . '|' . $this->ip());
     }
 }

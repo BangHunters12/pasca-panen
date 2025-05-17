@@ -21,15 +21,15 @@
 
     {{-- Gambar --}}
     <div class="mb-4 text-center">
-        <img src="{{ asset('assets/images/logos/alatpanen.jpg') }}" alt="Alat Bajak" class="img-fluid rounded shadow-sm">
+        <img src="{{ asset('assets/images/logos/alat_bajak.jpg') }}" alt="Alat Bajak" class="img-fluid rounded shadow-sm">
     </div>
 
     {{-- Konten Layanan --}}
   <<<!-- Deskripsi -->
 <div class="text-center mb-4">
-    <h5 class="fw-semibold" style="font-size: 1.2rem;"> Layanan alat panen</h5>
+    <h5 class="fw-semibold" style="font-size: 1.2rem;"> Layanan alat bajak</h5>
     <p class="text-muted" style="max-width: 700px; margin: 0 auto; font-size: 0.95rem;">
-        Gunakan alat panen yang mempercepat proses panen padi dan meminimalisir kerusakan hasil.
+        Sewa alat bajak modern untuk mengolah lahan dengan efisien. Cocok untuk semua jenis sawah dan ladang
     </p>
 </div>
 
@@ -37,8 +37,8 @@
 <div class="mb-4">
     <h5 class="text-success fw-semibold text-center mb-3" style="font-size: 1.1rem;">Fasilitas</h5>
     <ol class="text-muted" style="max-width: 700px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7;">
-        <li>Tersedia mesin perontok</li>
-        <li>Rekomendasi untuk lahan luas dan sempit.</li>
+        <li>Tersedia bajak traktor</li>
+        <li>Rekomendasu untuk lahan luas dan sempit.</li>
         <li>Disertai operator pengalaman.</li>
        
     </ol>
@@ -49,6 +49,7 @@
         Ajukan Sewa
     </a>
 </div>
+
 </div>
 @endsection
 
@@ -57,7 +58,7 @@
   <div class="modal-dialog">
     <div class="modal-content" style="backdrop-filter: blur(10px);">
       <div class="modal-header">
-        <h5 class="modal-title" id="formPengajuanLabel">Form Pengajuan Sewa Alat Panen</h5>
+        <h5 class="modal-title" id="formPengajuanLabel">Form Pengajuan Sewa Alat Bajak</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -87,3 +88,4 @@
     </div>
   </div>
 </div>
+
